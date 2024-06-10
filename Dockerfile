@@ -1,18 +1,23 @@
-# Utiliza a imagem oficial do MySQL
-FROM mysql:latest
+# Dockerfile para a aplicação Next.js
+FROM node:18-alpine
 
-# Define variáveis de ambiente
-ENV MYSQL_ROOT_PASSWORD=root_academy
-ENV MYSQL_DATABASE=academy
-ENV MYSQL_USER=academy
-ENV MYSQL_PASSWORD=@academy
+# Define o diretório de trabalho no container
+WORKDIR /app
 
-# (Opcional) Copia scripts de inicialização para o container
-# Copie os arquivos .sql ou .sh para o diretório /docker-entrypoint-initdb.d/
-# ADD ./path/to/sqlscript.sql /docker-entrypoint-initdb.d/
+# Copia package.json e package-lock.json para o contêiner
+COPY package*.json ./
 
-# Define o volume para persistir os dados
-VOLUME ["/var/lib/mysql"]
+# Instala as dependências
+RUN npm install
 
-# Exponha a porta 3306
-EXPOSE 3306
+# Copia o restante do código da aplicação para o contêiner
+COPY . .
+
+# Build da aplicação Next.js
+RUN npm run build
+
+# Exposição da porta que o Next.js usa
+EXPOSE 3000
+
+# Comando para iniciar o Next.js
+CMD ["npm", "run", "start"]
