@@ -1,7 +1,7 @@
+import CourseCard from "@/components/courses/CourseCard";
+import Categories from "@/components/custom/Categories";
 import { db } from "@/lib/db";
 import getCoursesByCategory from "../actions/getCourses";
-import Categories from "@/components/custom/Categories";
-import CourseCard from "@/components/courses/CourseCard";
 
 export default async function Home() {
   const categories = await db.category.findMany({
@@ -26,7 +26,6 @@ export default async function Home() {
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
-      
     </div>
   );
 }
