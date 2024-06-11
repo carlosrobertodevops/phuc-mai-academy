@@ -1,9 +1,10 @@
-version: '5'
+version: '3.9'
 
 services:
   db:
     image: mysql:latest
     container_name: mysql-academy
+    env_file: ./app-web/.env.development
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -11,7 +12,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./db/my.cnf:/etc/mysql/my.cnf
+      - ./app-web/db/my.cnf:/etc/mysql/my.cnf
     ports:
       - "3306:3306"
 

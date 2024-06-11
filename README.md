@@ -1,9 +1,11 @@
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
 First, run the development server:
 
+---
 ```bash
 npm run dev
 # or
@@ -13,6 +15,20 @@ pnpm dev
 # or
 bun dev
 ```
+---
+
+---
+```go
+# development
+# * Docker se desplegara en el puerto 80 (Si este puerto esta ocupado en la maquina local se debe cambiar en el archivo docker-compose.dev.yml)
+# * la version de la API es v2 ej: http://localhost/v2/auth/signup
+
+docker-compose -f docker-compose.dev.yml up --build -d
+
+# deploy from Docker hub
+docker-compose -f docker-compose.prod.yml up --build -d
+```
+---
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
