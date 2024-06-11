@@ -25,6 +25,43 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(home)/learning/page.js"
+    ],
+    "/(instructor)/instructor/courses/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(instructor)/instructor/courses/page.js"
+    ],
+    "/(instructor)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(instructor)/layout.js"
+    ],
+    "/(instructor)/instructor/performance/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(instructor)/instructor/performance/page.js"
+    ],
+    "/(instructor)/instructor/create-course/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(instructor)/instructor/create-course/page.js"
+    ],
+    "/(instructor)/instructor/courses/[courseId]/basic/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(instructor)/instructor/courses/[courseId]/basic/page.css",
+      "static/chunks/app/(instructor)/instructor/courses/[courseId]/basic/page.js"
+    ],
+    "/(instructor)/instructor/courses/[courseId]/sections/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(instructor)/instructor/courses/[courseId]/sections/page.js"
+    ],
+    "/(instructor)/instructor/courses/[courseId]/sections/[sectionId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(instructor)/instructor/courses/[courseId]/sections/[sectionId]/page.css",
+      "static/chunks/app/(instructor)/instructor/courses/[courseId]/sections/[sectionId]/page.js"
     ]
   }
 }
